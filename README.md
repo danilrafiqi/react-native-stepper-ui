@@ -1,8 +1,8 @@
 # react-native-stepper-ui
 
 [![Platform](https://img.shields.io/badge/platform-react--native-lightgrey.svg)](http://facebook.github.io/react-native/)
-[![npm version](http://img.shields.io/npm/v/react-native-stepper-ui.svg)](https://www.npmjs.com/package/react-native-stepper-ui)
-[![codecov](https://codecov.io/gh/danilrafiqi/react-native-stepper-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/danilrafiqi/react-native-stepper-ui)
+[![Version](http://img.shields.io/npm/v/react-native-stepper-ui.svg)](https://www.npmjs.com/package/react-native-stepper-ui)
+[![Download](http://img.shields.io/npm/dm/react-native-stepper-ui.svg)](https://www.npmjs.com/package/react-native-stepper-ui)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.github.com/danilrafiqi/react-native-stepper-ui/master/LICENSE)
 
 A simple and fully customizable React Native component to create stepper ui.
