@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/danilrafiqi/react-native-stepper-ui/issues"
   },
-  "homepage": "https://github.com/danilrafiqi/react-native-stepper-ui#readme"
+  "homepage": "https://github.com/danilrafiqi/react-native-stepper-ui#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
