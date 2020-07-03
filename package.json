@@ -1,6 +1,6 @@
 {
   "name": "react-native-stepper-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Stepper Component for React Native",
   "main": "index.tsx",
   "scripts": {
@@ -25,8 +25,5 @@
   "bugs": {
     "url": "https://github.com/danilrafiqi/react-native-stepper-ui/issues"
   },
-  "homepage": "https://github.com/danilrafiqi/react-native-stepper-ui#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  }
+  "homepage": "https://github.com/danilrafiqi/react-native-stepper-ui#readme"
 }
