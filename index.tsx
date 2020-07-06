@@ -92,16 +92,27 @@ const Stepper: FC<StepperProps> = (props) => {
                   },
                   stepStyle,
                 ]}>
-                {console.log('cek val', search(i, step))}
-                <Text
-                  style={[
-                    {
-                      color: 'white',
-                    },
-                    stepTextStyle,
-                  ]}>
-                  {i + 1}
-                </Text>
+                {search(i, step) ? (
+                  <Text
+                    style={[
+                      {
+                        color: 'white',
+                      },
+                      stepTextStyle,
+                    ]}>
+                    &#10003;
+                  </Text>
+                ) : (
+                  <Text
+                    style={[
+                      {
+                        color: 'white',
+                      },
+                      stepTextStyle,
+                    ]}>
+                    {i + 1}
+                  </Text>
+                )}
               </View>
             </React.Fragment>
           );

@@ -1,6 +1,6 @@
 {
   "name": "react-native-stepper-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Stepper Component for React Native",
   "main": "index.tsx",
   "scripts": {
