@@ -13,10 +13,12 @@ A simple and fully customizable React Native component to create stepper ui.
 
 ## Table of contents
 
-1. [Example](#example)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Props](#props)
+- [react-native-stepper-ui](#react-native-stepper-ui)
+  - [Table of contents](#table-of-contents)
+  - [Example](#example)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Props](#props)
 
 ## Example
 
@@ -41,37 +43,43 @@ npm i react-native-stepper-ui
 ## Usage
 
 ```javascript
-import React, { useState } from "react";
-import Stepper from "react-native-stepper-ui";
-import { View, Alert, Text } from "react-native";
-const MyComponent = (props) => {
+import React, { useState } from "react"
+import { Text, View } from "react-native"
+
+import Stepper from "react-native-stepper-ui"
+
+const MyComponent = props => {
   return (
     <View>
       <Text>{props.title}</Text>
     </View>
-  );
-};
+  )
+}
+
 const content = [
-  <MyComponent title="Component 1" />,
-  <MyComponent title="Component 2" />,
-  <MyComponent title="Component 3" />,
-];
+  <MyComponent title = "Component 1" />,
+  <MyComponent title = "Component 2" />,
+  <MyComponent title = "Component 3" />
+]
+
 const App = () => {
-  const [active, setActive] = useState(0);
+  const [ active, setActive ] = useState(0)
+
   return (
-    <View style={{ marginVertical: 80, marginHorizontal: 20 }}>
+    <View
+      style = {{ marginVertical: 80, marginHorizontal: 20 }}>
       <Stepper
-        active={active}
-        content={content}
-        onNext={() => setActive((p) => p + 1)}
-        onBack={() => setActive((p) => p - 1)}
-        onFinish={() => Alert.alert("Finish")}
+        active = {active}
+        content = {content}
+        onBack = {() => setActive(p => p - 1)}
+        onFinish = {() => alert("Finish")}
+        onNext = {() => setActive(p => p + 1)}
       />
     </View>
-  );
-};
+  )
+}
 
-export default App;
+export default App
 ```
 
 ## Props
