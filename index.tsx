@@ -22,15 +22,11 @@ export interface StepperProps {
   showButton?: boolean;
 }
 
+
 const search = (keyName: number, myArray: number[]): boolean => {
-  let value = false;
-  myArray.map((val) => {
-    if (val === keyName) {
-      value = true;
-    }
-  });
-  return value;
+  return myArray.some((val) => val === keyName)
 };
+
 
 const Stepper: FC<StepperProps> = (props) => {
   const {
