@@ -32,14 +32,7 @@
   "keywords": [
     "react-native",
     "ios",
-    "android",
-    "react",
-    "react-component",
-    "react-native-component",
-    "react-stepper",
-    "react-native-stepper",
-    "react-native-stepper-ui",
-    "react-native-progress-steps"
+    "android"
   ],
   "repository": "https://github.com/danilrafiqi/react-native-stepper-ui",
   "author": "danilrafiqi <danil.rafiqi@gmail.com> (https://github.com/danilrafiqi)",

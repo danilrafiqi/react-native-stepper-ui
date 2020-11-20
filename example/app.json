@@ -1,4 +1,22 @@
 {
-  "name": "StepperUiExample",
-  "displayName": "StepperUi Example"
+  "name": "react-native-stepper-ui-example",
+  "displayName": "StepperUi Example",
+  "expo": {
+    "name": "react-native-stepper-ui-example",
+    "slug": "react-native-stepper-ui-example",
+    "description": "Example app for react-native-stepper-ui",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
 }
