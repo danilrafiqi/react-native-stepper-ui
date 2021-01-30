@@ -1,4 +1,4 @@
-import React, { FC, useState, ReactElement } from 'react';
+import React, { FC, useState, ReactElement, useEffect } from 'react';
 import {
   View,
   Text,
@@ -51,6 +51,15 @@ const Stepper: FC<StepperProps> = (props) => {
       return prev;
     });
   };
+
+  useEffect(() => {
+    if (step[step.length - 1] > active) {
+      removeData();
+    } else {
+      pushData(active);
+    }
+  }, [active]);
+
   return (
     <View style={wrapperStyle}>
       <View
@@ -140,7 +149,7 @@ const Stepper: FC<StepperProps> = (props) => {
                 },
               ]}
               onPress={() => {
-                removeData();
+                // removeData();
                 onBack();
               }}
             >
@@ -160,7 +169,7 @@ const Stepper: FC<StepperProps> = (props) => {
                 buttonStyle,
               ]}
               onPress={() => {
-                pushData(active + 1);
+                // pushData(active + 1);
                 onNext();
               }}
             >
