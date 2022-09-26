@@ -16,6 +16,7 @@ export interface StepperProps {
   onFinish: Function;
   wrapperStyle?: ViewStyle;
   stepStyle?: ViewStyle;
+  stepLine?:ViewStyle;
   stepTextStyle?: TextStyle;
   buttonStyle?: ViewStyle;
   buttonTextStyle?: TextStyle;
@@ -34,6 +35,7 @@ const Stepper: FC<StepperProps> = (props) => {
     onNext,
     onFinish,
     wrapperStyle,
+    stepLine,
     stepStyle,
     stepTextStyle,
     buttonStyle,
@@ -74,13 +76,13 @@ const Stepper: FC<StepperProps> = (props) => {
             <React.Fragment key={i}>
               {i !== 0 && (
                 <View
-                  style={{
+                  style={[{
                     flex: 1,
                     height: 1,
                     backgroundColor: 'grey',
                     opacity: 1,
                     marginHorizontal: 10,
-                  }}
+                  },stepLine]}
                 />
               )}
               <View
