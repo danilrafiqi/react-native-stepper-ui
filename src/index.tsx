@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { FC, useState, ReactElement, useEffect } from 'react';
 import {
   View,
@@ -16,7 +17,7 @@ export interface StepperProps {
   onFinish: Function;
   wrapperStyle?: ViewStyle;
   stepStyle?: ViewStyle;
-  stepLine?:ViewStyle;
+  stepLine?: ViewStyle;
   stepTextStyle?: TextStyle;
   buttonStyle?: ViewStyle;
   buttonTextStyle?: TextStyle;
@@ -42,25 +43,25 @@ const Stepper: FC<StepperProps> = (props) => {
     buttonTextStyle,
     showButton = true,
   } = props;
-  const [step, setStep] = useState<number[]>([0]);
+  const [steps, setSteps] = useState<number[]>([0]);
   const pushData = (val: number) => {
-    setStep((prev) => [...prev, val]);
+    setSteps((prev) => [...prev, val]);
   };
 
   const removeData = () => {
-    setStep((prev) => {
+    setSteps((prev) => {
       prev.pop();
       return prev;
     });
   };
 
   useEffect(() => {
-    if (step[step.length - 1] > active) {
+    if (steps[steps.length - 1] > active) {
       removeData();
     } else {
       pushData(active);
     }
-  }, [active]);
+  }, [active, steps]);
 
   return (
     <View style={wrapperStyle}>
@@ -76,13 +77,16 @@ const Stepper: FC<StepperProps> = (props) => {
             <React.Fragment key={i}>
               {i !== 0 && (
                 <View
-                  style={[{
-                    flex: 1,
-                    height: 1,
-                    backgroundColor: 'grey',
-                    opacity: 1,
-                    marginHorizontal: 10,
-                  },stepLine]}
+                  style={[
+                    {
+                      flex: 1,
+                      height: 1,
+                      backgroundColor: 'grey',
+                      opacity: 1,
+                      marginHorizontal: 10,
+                    },
+                    stepLine,
+                  ]}
                 />
               )}
               <View
@@ -94,12 +98,12 @@ const Stepper: FC<StepperProps> = (props) => {
                     borderRadius: 30,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    opacity: search(i, step) ? 1 : 0.3,
+                    opacity: search(i, steps) ? 1 : 0.3,
                   },
                   stepStyle,
                 ]}
               >
-                {search(i, step) ? (
+                {search(i, steps) ? (
                   <Text
                     style={[
                       {
