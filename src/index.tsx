@@ -22,6 +22,9 @@ export interface StepperProps {
   buttonStyle?: ViewStyle;
   buttonTextStyle?: TextStyle;
   showButton?: boolean;
+  backText?: string;
+  nextText?: string;
+  finishText?: string;
 }
 
 const containsKey = (key: number, arr: number[]): boolean => {
@@ -42,6 +45,9 @@ const Stepper: FC<StepperProps> = (props) => {
     buttonStyle,
     buttonTextStyle,
     showButton = true,
+    backText = 'Back',
+    nextText = 'Next',
+    finishText = 'Finish',
   } = props;
   const [steps, setSteps] = useState<number[]>([0]);
   const pushData = (val: number) => {
@@ -159,7 +165,9 @@ const Stepper: FC<StepperProps> = (props) => {
                 onBack();
               }}
             >
-              <Text style={[{ color: 'white' }, buttonTextStyle]}>Back</Text>
+              <Text style={[{ color: 'white' }, buttonTextStyle]}>
+                {backText}
+              </Text>
             </TouchableOpacity>
           )}
           {content.length - 1 !== active && (
@@ -179,7 +187,9 @@ const Stepper: FC<StepperProps> = (props) => {
                 onNext();
               }}
             >
-              <Text style={[{ color: 'white' }, buttonTextStyle]}>Next</Text>
+              <Text style={[{ color: 'white' }, buttonTextStyle]}>
+                {nextText}
+              </Text>
             </TouchableOpacity>
           )}
           {content.length - 1 === active && (
@@ -195,7 +205,9 @@ const Stepper: FC<StepperProps> = (props) => {
               ]}
               onPress={() => onFinish()}
             >
-              <Text style={[{ color: 'white' }, buttonTextStyle]}>Finish</Text>
+              <Text style={[{ color: 'white' }, buttonTextStyle]}>
+                {finishText}
+              </Text>
             </TouchableOpacity>
           )}
         </View>
