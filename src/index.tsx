@@ -24,8 +24,8 @@ export interface StepperProps {
   showButton?: boolean;
 }
 
-const search = (keyName: number, myArray: number[]): boolean => {
-  return myArray.some((val) => val === keyName);
+const containsKey = (key: number, arr: number[]): boolean => {
+  return arr.includes(key);
 };
 
 const Stepper: FC<StepperProps> = (props) => {
@@ -98,12 +98,12 @@ const Stepper: FC<StepperProps> = (props) => {
                     borderRadius: 30,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    opacity: search(i, steps) ? 1 : 0.3,
+                    opacity: containsKey(i, steps) ? 1 : 0.3,
                   },
                   stepStyle,
                 ]}
               >
-                {search(i, steps) ? (
+                {containsKey(i, steps) ? (
                   <Text
                     style={[
                       {
