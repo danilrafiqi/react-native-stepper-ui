@@ -16,7 +16,7 @@ export interface StepperProps {
   onFinish: Function;
   wrapperStyle?: ViewStyle;
   stepStyle?: ViewStyle;
-  stepLine?:ViewStyle;
+  stepLine?: ViewStyle;
   stepTextStyle?: TextStyle;
   buttonNextStyle?: ViewStyle;
   buttonBackStyle?: ViewStyle;
@@ -92,7 +92,7 @@ const Stepper: FC<StepperProps> = (props) => {
                     backgroundColor: 'grey',
                     opacity: 1,
                     marginHorizontal: 10,
-                  },stepLine]}
+                  }, stepLine]}
                 />
               )}
               <View
@@ -165,7 +165,7 @@ const Stepper: FC<StepperProps> = (props) => {
                 onBack();
               }}
             >
-              <Text style={[{ color: 'white' }, buttonTextStyle]}>{ backButtonLabel }</Text>
+              <Text style={[{ color: 'white' }, buttonTextStyle]}>{backButtonLabel ?? 'Back'}</Text>
             </TouchableOpacity>
           )}
           {content.length - 1 !== active && (
@@ -185,7 +185,7 @@ const Stepper: FC<StepperProps> = (props) => {
                 onNext();
               }}
             >
-              <Text style={[{ color: 'white' }, buttonTextStyle]}>{ nextButtonLabel }</Text>
+              <Text style={[{ color: 'white' }, buttonTextStyle]}>{nextButtonLabel ?? 'Next'}</Text>
             </TouchableOpacity>
           )}
           {content.length - 1 === active && (
@@ -201,7 +201,7 @@ const Stepper: FC<StepperProps> = (props) => {
               ]}
               onPress={() => onFinish()}
             >
-              <Text style={[{ color: 'white' }, buttonTextStyle]}>{ finishButtonLabel }</Text>
+              <Text style={[{ color: 'white' }, buttonTextStyle]}>{finishButtonLabel ?? 'Finish'}</Text>
             </TouchableOpacity>
           )}
         </View>
