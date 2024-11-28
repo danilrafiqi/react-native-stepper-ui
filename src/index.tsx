@@ -26,6 +26,7 @@ export interface StepperProps {
   nextButtonLabel?: string;
   backButtonLabel?: string;
   finishButtonLabel?: string;
+  displayFinish?: boolean;
 }
 
 const search = (keyName: number, myArray: number[]): boolean => {
@@ -50,7 +51,8 @@ const Stepper: FC<StepperProps> = (props) => {
     showButton = true,
     nextButtonLabel,
     backButtonLabel,
-    finishButtonLabel
+    finishButtonLabel,
+    displayFinish=true
   } = props;
   const [step, setStep] = useState<number[]>([0]);
   const pushData = (val: number) => {
@@ -168,7 +170,7 @@ const Stepper: FC<StepperProps> = (props) => {
               <Text style={[{ color: 'white' }, buttonTextStyle]}>{ backButtonLabel }</Text>
             </TouchableOpacity>
           )}
-          {content.length - 1 !== active && (
+          {displayFinish && content.length - 1 !== active && (
             <TouchableOpacity
               style={[
                 {
